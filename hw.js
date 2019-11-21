@@ -206,35 +206,13 @@ const wordsWithAtLeastTwoVowels = function (words) {
 const allHaveAtLeastTwoVowels = function (words) {
 
   // Your Code Here
-  let testWords = words;
-  for (let i = 0; i < words.length; i++) {
-    let word = words[i];
-    let sum = 0;
-    for (let j = 0; j < word.length; j++) {
-      
-
-      if (word[j].toUpperCase() === 'A' ||
-          word[j].toUpperCase() === 'I' ||
-          word[j].toUpperCase() === 'O' ||
-          word[j].toUpperCase() === 'E' ||
-          word[j].toUpperCase() === 'U' ) {
-        sum = sum + 1;
-      }
-      
-    }
-
-    if (sum < 2) {
-      testWords.splice(i, 1);
-    }
-
-  }
-  
-  if (testWords.length < words.length) {
+  if (wordsWithAtLeastTwoVowels(words).length !== words.length) {
     return false;
-  } else { 
-    return true;
   }
-}
+  return true;
+
+
+ }
 
 // #10
 // Input: an array of words
@@ -246,6 +224,10 @@ const allHaveAtLeastTwoVowels = function (words) {
 const anyHaveAtLeastTwoVowels = function (words) {
 
   // Your Code Here
+  if (wordsWithAtLeastTwoVowels(words).length >= 1) {
+    return true;
+  }
+  return false;
 }
 
 // #11
@@ -262,6 +244,10 @@ const anyHaveAtLeastTwoVowels = function (words) {
 const noneHaveTwoOrMoreVowels = function (words) {
 
   // Your Code Here
+  if (wordsWithAtLeastTwoVowels(words).length !== 0) {
+    return false;
+  }
+  return true;
 }
 
 // #12
